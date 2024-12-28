@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TeacherdashboardComponent } from './teacher/teacherdashboard/teacherdashboard.component';
+import { LoginComponent } from './login/login.component';
+import { StudentComponent } from './student/student.component';
 
 export const routes: Routes = [
     {
@@ -11,20 +13,32 @@ export const routes: Routes = [
         path: 'registration',
         component:RegistrationComponent
     },{
-        path:'login',
-        component:HomeComponent
+        path: 'login',
+        component:LoginComponent
     },
+    // {
+    //     path:'teacher',
+    //     component:TeacherComponent
+    // },
+    // {
+    //     path:'student',
+    //     component:StudentComponent
+    // },
+    // {
+    //     path:'teacher',
+    //     component:TeacherdashboardComponent
+    // }, 
+    { path: 'student',
+        loadChildren: () => import('./student/student.module').then(m => m.StudentModule)},
+        {
+          path: 'teacher',
+          loadChildren: () => import('./teacher/teacher.module').then(m => m.TeacherModule)
+        },// lazy loading
+
     {
         path:'**',
         redirectTo: ''
-    },{
-        path:'teacher',
-        component:TeacherdashboardComponent
     }
-    // { path: 'student',
-    //     loadChildren: () => import('./student/student.module').then(m => m.StudentModule)},
-    //     {
-    //       path: 'teacher',
-    //       loadChildren: () => import('./teacher/teacher.module').then(m => m.TeacherModule)
-    //     }
 ];
+
+

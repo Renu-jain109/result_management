@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="p-3">
+                <button type="button" class="btn btn-primary py-2 px-4 fs-4" routerLink="/teacher/teacherdashboard">Back</button>                           
+            </div>
+            </div>
+            <div class="col-12">
+
+            <div class="wrapper d-flex mt-5">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <form [formGroup]="addResultForm" class="d-flex flex-column gap-3">
+                        <div class="header h3"> Add New Result</div>
+
+                        <div class="form-group row">
+                          <label for="inputRollNo" class="col-sm-2 col-form-label">Roll No</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputRollNo" formControlName="rollNo" placeholder="Enter roll no">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter name">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="inputDob" class="col-sm-2 col-form-label">Dob</label>
+                          <div class="col-sm-10">
+                            <input type="date" class="form-control" id="inputDob" placeholder="Enter name">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="inputScore" class="col-sm-2 col-form-label">Score</label>
+                          <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputScore" placeholder="Enter name">
+                          </div>
+                        </div>
+
+                        <div class=" d-flex flex-row gap-3 justify-content-center mt-4">
+                            <button type="button" class="btn btn-outline-primary" (click)="submit()">Submit</button>                           
+                            <button type="button" class="btn btn-outline-primary">Clear</button>
+                        </div>
+                      </form>
+                  
+                </div>
+            <div class="col-4"></div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+

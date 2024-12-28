@@ -1,0 +1,19 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+
+}
+.h-custom {
+height: calc(100% - 120px);
+padding-bottom: 50px;
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+padding-bottom: 20px;
+
+}
+}

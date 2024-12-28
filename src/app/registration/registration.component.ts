@@ -3,15 +3,17 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { RegistrationService } from './registration.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule,CommonModule],
+  imports: [FormsModule,ReactiveFormsModule,CommonModule,RouterLink],
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent implements OnInit {
+  
   registrationForm : FormGroup;
   formBuilder = inject(FormBuilder);
 registrationService = inject(RegistrationService)
