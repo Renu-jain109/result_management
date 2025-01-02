@@ -4,8 +4,12 @@
             <h1 class="text-light ps-5">Result Management</h1>
         </div>
         <div class="collapse navbar-collapse text-end d-flex flex-row gap-5 justify-content-center ps-5">
-            <div class="ps-5">
+
+            <div class="ps-5" *ngIf="!loggedIn">
                 <button type="button" class="btn btn-outline-light" routerLink="/login">Login</button>
+            </div>
+            <div class="ps-5" *ngIf="loggedIn">
+                <button type="button" class="btn btn-outline-light" (click)="logOut()">Log Out</button>
             </div>
                 <div class="ps-5">
                 <button type="button" class="btn btn-outline-light " routerLink="/registration">Registration</button>

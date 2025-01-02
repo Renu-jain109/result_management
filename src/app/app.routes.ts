@@ -3,7 +3,6 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TeacherdashboardComponent } from './teacher/teacherdashboard/teacherdashboard.component';
 import { LoginComponent } from './login/login.component';
-import { StudentComponent } from './student/student.component';
 
 export const routes: Routes = [
     {

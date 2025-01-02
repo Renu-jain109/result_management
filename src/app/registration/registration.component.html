@@ -15,20 +15,22 @@
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example1c">User Name :</label>
                         
-                        <input type="text" formControlName="username" name="username" id="form3Example1c" class="form-control" placeholder="Enter UserName" />
+                        <input type="text" formControlName="username" name="username" firstletter="Capitalize" id="form3Example1c" class="form-control" placeholder="Enter UserName" />
 
-                        <!-- @if(registrationForm.get('username').touched){
+                        @if(registrationForm.get('username').touched){
                             <div class="text-danger">
                                 @if(registrationForm.get('username')?.errors?.['required']){
                                     <span>This is Required</span>
+                                <!-- }@if(registrationForm.get('Capitalize')?.errors?['required']){
+                                  <span>First Letter Capital</span> -->
                                 }
                             </div>
-                        } -->
-                        <div *ngIf="registrationForm.get('username').touched" >
+                        }
+                        <!-- <div *ngIf="registrationForm.get('username').touched" >
                         <div *ngIf="registrationForm.get('username')?.errors?.['required']" class="text-danger">
                             <span>This is Required</span>
                         </div>
-                        </div>
+                        </div> -->
                         </div>
                     </div>
   

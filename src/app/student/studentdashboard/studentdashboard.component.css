@@ -1,0 +1,28 @@
+.example-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+
+}
+.mat-toolbar{
+    text-align: center;
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.form-field{
+    width: 400px;
+}
+.example-button-row{
+    flex-direction: row;
+    display: flex    ;
+    gap: 10px;
+}
+

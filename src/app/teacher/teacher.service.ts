@@ -15,6 +15,20 @@ return this.http.post(environment.API_URL+"result",result);
   }
 
   getAllResult() : Observable <any> {
-    return this.http.get("http://localhost:8084/rollnumber");
+    return this.http.get(environment.API_URL+"result");
   }
+
+  deleteResult (rollno : any) : Observable <any>{
+    return this.http.delete(`${environment.API_URL}result/${rollno}`);
+
+  };
+  editResult (rollno : number,result : any) : Observable <any>{
+    return this.http.put(`${environment.API_URL}result/${rollno}`,result);
+
+  };
+  // updateResult(id: number, data: any): Observable<any> {
+  //   return this.http.put(`${environment.API_URL}result/${id}`, data);
+  // }
+  
+
 }

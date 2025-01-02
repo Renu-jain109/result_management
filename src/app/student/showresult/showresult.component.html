@@ -1,0 +1,45 @@
+
+
+
+<div class="container">
+    <div class="row ">
+        <div class="col-12">
+            <div class="wrapper">
+                <div class="p-5 ">
+                    <button class="btn btn-success " routerLink="/student/studentdashboard">Back</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-10 ">
+            <div class="wrapper text-center ps-5">
+                <div class="card">
+                    <div class="card-header bg-success text-light fw-bold fs-5">
+                        Result
+                    </div>
+                    <div class="card-body bg-danger-subtle">
+                        <table class="table table-bordered table-warning ">
+                            <thead>
+                                <tr>
+                                    <th>Roll No.</th>
+                                    <th> Name</th>
+                                    <th> Date of Birth</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @for(data of studentData;track data){
+                                    <td>{{data.rollno}}</td>
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.dob}}</td>
+                                    <td>{{data.score}}</td>
+                                }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>

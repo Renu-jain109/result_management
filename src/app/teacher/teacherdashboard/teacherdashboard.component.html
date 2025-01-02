@@ -1,38 +1,42 @@
 
-<div class="p-5 text-center">
-    <button class="btn btn-success" routerLink="/teacher/addresult">Add Record</button>
+
+
+<div class="p-5 text-center"> 
+     <button class="btn btn-success" routerLink="/teacher/addresult">Add Record</button> 
 </div>
 
-<!--<div class="card">
+<div class="card p-5 bg-primary-subtle">
   
-    <p-table [value]="resultList" #dt2
-    dataKey="id"
+    <p-table [value]="resultList" #dt2 
+    dataKey="rollno"
     [rows]="10"
     [rowsPerPageOptions]="[10, 25, 50]"
     [paginator]="true"
-    [globalFilterFields]="['title','content']"
+    [globalFilterFields]="['name','rollno']"
     [tableStyle]="{ 'min-width': '75rem' }"
   >
   
       <ng-template pTemplate="caption">
-        <div class="flex">
+        <div class="flex" >
             <p-iconfield iconPosition="left" class="ml-auto">
-                <p-inputicon>
+                <!-- <p-inputicon>
                     <i class="pi pi-search"></i>
-                </p-inputicon>
+                </p-inputicon> -->
+
                 <input
                     pInputText
                     type="text"
                     (input)="dt2.filterGlobal(
                      $any($event.target).value, 'contains')"
                     placeholder="Search keyword"
+                    class="inputValue"
                 />
+
             </p-iconfield>
         </div>
     </ng-template>
-        <ng-template #header>
+        <ng-template pTemplate="header">
             <tr>
-                <th>S. No.</th>
                 <th>Roll No.</th>
                 <th>Name</th>
                 <th>Dob</th>
@@ -41,31 +45,35 @@
                 <th>Delete</th>
             </tr>
         </ng-template>
-        <ng-template #body let-result let-i="rowIndex">
-            <tr> -->
-                <!-- <td>{{ i+1 | currency :'USD':'symbol' }}</td> -->
-                <!-- <td>{{ result.name}}</td> -->
-                <!-- <td>
-                  <button pButton icon="pi pi-user-edit" class="p-button-help" (click)="editNote(note)"></button>
+        <ng-template pTemplate="body" let-result >
+            <tr> 
+                <td>{{ result.rollno}}</td>
+                <td>{{ result.name}}</td>
+                <td>{{ result.dob}}</td>
+                <td>{{ result.score}}</td>
+                <td>
+                  <button pButton icon="pi pi-user-edit" class="p-button-help" (click)="edit(result)"></button>
+                  <!-- <button pButton icon="pi pi-user-edit" class="p-button-help" (click)="editResult(result)"></button> -->
                 </td>
-                <td><button pButton icon="pi pi-trash" class="p-button-danger" (click)="deleteNote(note.id)"></button>
-                </td> -->
+                <td><button pButton icon="pi pi-trash" class="p-button-danger" (click)="deleteResult(result.rollno)"></button>
+                </td>
   
-          <!-- </tr>
+           </tr>
         </ng-template>
     </p-table>
-  </div> -->
-  
-  
+</div> 
   
 
 
-<div class="row">
+
+
+<!--  <div class="row">
     <div class="col-12">
         <div class="wrapper">
             <table class="table table-bordered table-striped text-center">
                 <thead class="table table-danger">
                     <tr>
+                        <th>S. No.</th>
                         <th>Roll No.</th>
                         <th>Name</th>
                         <th>Dob</th>
@@ -76,13 +84,15 @@
                     <tr *ngFor="let result of resultList; let i = index">
 
                         <td>{{i+1}}</td>
+                        <td>{{result.rollno}}</td>
                         <td>{{result.name}}</td>
+                        <td>{{result.dob}}</td>
+                        <td>{{result.score}}</td>
                     </tr>
                 </tbody>
             </table>
             
         </div>
     </div>
-</div>
-
-
+</div>-->
+ 

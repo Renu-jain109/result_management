@@ -14,6 +14,18 @@ export class LoginService {
   login (object : any) : Observable <any>{
     return this.http.post(environment.API_URL+"user/login", object);
   }
+
+  logOut(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');
+
   };
+
+  isAuthenticated() : boolean{
+    return !!localStorage.getItem('token');
+  };
+
+  }
   
 

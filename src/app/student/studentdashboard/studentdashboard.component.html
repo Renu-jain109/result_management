@@ -1,1 +1,25 @@
-<p>studentdashboard works!</p>
+<div class="example-container">
+  <div class="form-container">
+    <form [formGroup]="studentResult">
+
+      <mat-toolbar>
+        <span>Find Result</span>
+        </mat-toolbar>
+        
+        <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Roll No. </mat-label>
+        <input matInput formControlName="rollno" >
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Name</mat-label>
+        <input matInput formControlName="name" >
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button mat-flat-button (click)="submit()">Search</button>
+        <button mat-flat-button (click)="clear()">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>

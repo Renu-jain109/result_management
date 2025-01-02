@@ -37,10 +37,15 @@ submit (){
 
 
   this.loginService.login(json).subscribe((res : any)=>{
+    
+    localStorage.setItem('token','asdf');
+     localStorage.setItem('username',res.username);
+     localStorage.setItem('role',res.role);
+
     if(res.role == 'teacher'){
       this.router.navigate(['/teacher/teacherdashboard']);
     }else{
-      this.router.navigate(['/student']);
+      this.router.navigate(['/student/studentdashboard']);
     }
 this.toastr.success("Login successfully"); 
 this.loginForm.reset();
