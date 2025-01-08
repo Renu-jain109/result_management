@@ -15,10 +15,11 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit  {
 
   loginForm : FormGroup;
-  constructor(private formBuilder : FormBuilder){}
   loginService = inject(LoginService);
   toastr = inject(ToastrService);
   router = inject(Router);
+  constructor(private formBuilder : FormBuilder){}
+  
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -30,10 +31,11 @@ export class LoginComponent implements OnInit  {
 
 submit (){
   const json = {
-    email : this.loginForm.get('email').value,
-    password : this.loginForm.get('password').value,
-    role : this.loginForm.get('role').value
+    email : this.loginForm.get('email')?.value,
+    password : this.loginForm.get('password')?.value,
+    role : this.loginForm.get('role')?.value
   };
+
 
 
   this.loginService.login(json).subscribe((res : any)=>{
@@ -43,16 +45,20 @@ submit (){
      localStorage.setItem('role',res.role);
 
     if(res.role == 'teacher'){
-      this.router.navigate(['/teacher/teacherdashboard']);
-    }else{
-      this.router.navigate(['/student/studentdashboard']);
+      // this.router.navigate(['/teacher/teacherdashboard']);
+      window.location.href='/teacher/teacherdashboard';
+    }else{  
+      // this.router.navigate(['/student/studentdashboard']);
+      window.location.href='/student/studentdashboard';
     }
 this.toastr.success("Login successfully"); 
 this.loginForm.reset();
-}, error => {
+
+}, (error) => {
   console.error('Login failed:', error);
   this.toastr.error('Invalid login credentials');
 });
 
 };
+
 }

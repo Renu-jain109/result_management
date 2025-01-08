@@ -15,18 +15,6 @@ export const routes: Routes = [
         path: 'login',
         component:LoginComponent
     },
-    // {
-    //     path:'teacher',
-    //     component:TeacherComponent
-    // },
-    // {
-    //     path:'student',
-    //     component:StudentComponent
-    // },
-    // {
-    //     path:'teacher',
-    //     component:TeacherdashboardComponent
-    // }, 
     { path: 'student',
         loadChildren: () => import('./student/student.module').then(m => m.StudentModule)},
         {

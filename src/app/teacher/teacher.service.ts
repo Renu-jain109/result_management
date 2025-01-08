@@ -26,9 +26,6 @@ return this.http.post(environment.API_URL+"result",result);
     return this.http.put(`${environment.API_URL}result/${rollno}`,result);
 
   };
-  // updateResult(id: number, data: any): Observable<any> {
-  //   return this.http.put(`${environment.API_URL}result/${id}`, data);
-  // }
   
 
 }

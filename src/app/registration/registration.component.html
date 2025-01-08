@@ -15,14 +15,15 @@
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example1c">User Name :</label>
                         
-                        <input type="text" formControlName="username" name="username" firstletter="Capitalize" id="form3Example1c" class="form-control" placeholder="Enter UserName" />
+                        <input type="text" formControlName="username" name="username"  id="form3Example1c" class="form-control" placeholder="Enter UserName"/>
+                        <div class="text-danger">
+                          {{registrationForm.get('username')?.value | letter}}
+                        </div>
 
                         @if(registrationForm.get('username').touched){
                             <div class="text-danger">
                                 @if(registrationForm.get('username')?.errors?.['required']){
                                     <span>This is Required</span>
-                                <!-- }@if(registrationForm.get('Capitalize')?.errors?['required']){
-                                  <span>First Letter Capital</span> -->
                                 }
                             </div>
                         }
@@ -38,6 +39,13 @@
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Your Email :</label>
                         <input type="email" formControlName="email" id="form3Example3c" class="form-control" placeholder="Enter Your Email"/>
+                        @if(registrationForm.get('email').touched){
+                          <div class="text-danger">
+                            @if(registrationForm.get('email')?.errors?.['required']){
+                              <span>This is Required</span>
+                            }
+                          </div>
+                        }
                       </div>
                     </div>
   
@@ -45,6 +53,14 @@
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4c">Password :</label>
                         <input type="password" formControlName="password" id="form3Example4c" class="form-control" placeholder="Password"/>
+                        @if(registrationForm.get('password').touched){
+                          <div class="text-danger">
+                            @if(registrationForm.get('password')?.errors?.['required']){
+                              <span>This is Required</span>
+                            }
+                          </div>
+                        }
+
                       </div>
                     </div>
   
@@ -52,6 +68,7 @@
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4cd">Confirm password :</label>
                         <input type="password" formControlName="confirmPassword" id="form3Example4cd" class="form-control" placeholder="Confirm password"/>
+
                       </div>
                     </div>
                     <div class="mb-3">Select Role :</div>

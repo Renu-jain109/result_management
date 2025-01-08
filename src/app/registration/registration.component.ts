@@ -4,11 +4,12 @@ import { RegistrationService } from './registration.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { LetterPipe } from '../pipe/letter.pipe';
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule,CommonModule,RouterLink],
+  imports: [FormsModule,ReactiveFormsModule,CommonModule,RouterLink,LetterPipe],
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css'
 })
@@ -18,7 +19,6 @@ export class RegistrationComponent implements OnInit {
   formBuilder = inject(FormBuilder);
 registrationService = inject(RegistrationService)
 toastr = inject(ToastrService);
-
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
@@ -30,6 +30,7 @@ toastr = inject(ToastrService);
 
     });
   };
+
 
   submit(){
     let json = {
@@ -59,6 +60,8 @@ toastr = inject(ToastrService);
 
     });
   };
+
+
   
 }
 
